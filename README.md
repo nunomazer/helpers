@@ -1,7 +1,15 @@
 # helpers
 
-PHP common lib with several function helpers
+PHP common lib with several class helpers
 
-** This is a work in progress **
+## Usage
+
+### String class
+
+#### ucwords
+
+Function that mimics original php ucwords, but works with exceptions and delimiters to not upper case words like (in Portuguese):
+
+de, da, do, o, a, os .. etc.
 
 
