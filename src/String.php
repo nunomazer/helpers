@@ -16,12 +16,14 @@ class String {
 		$string = $this->string <> $string ? $string : $this->string;	
 
 		//$string = mb_convert_case($string, MB_CASE_UPPER, "UTF-8");		
-		$string = \transliterator_transliterate('Any-Latin; Latin-ASCII; Upper()', $string);
+		$string = transliterator_transliterate('Any-Latin; Latin-ASCII; Upper()', $string);
 
 		$string = trim($string);
 
 		// TODO verify if we should remove -
 		//$string = str_replace('-','',$string);
+
+		return $string;
 	}
 
 	/**
