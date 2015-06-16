@@ -12,6 +12,18 @@ class String {
 		$this->string = $string;
 	}
 	
+	public function toSearch($string = '') {
+		$string = $this->string <> $string ? $string : $this->string;	
+
+		//$string = mb_convert_case($string, MB_CASE_UPPER, "UTF-8");		
+		$string = transliterator_transliterate('Any-Latin; Latin-ASCII; Upper()', $string);
+
+		$string = trim($string);
+
+		// TODO verify if we should remove -
+		//$string = str_replace('-','',$string);
+	}
+
 	/**
 	* Based on http://php.net/manual/en/function.ucwords.php comments of antoniomax at antoniomax dot com
 	**/
