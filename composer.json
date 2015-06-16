@@ -1,0 +1,23 @@
+{
+    "name": "winponta/helpers",
+    "description": "Class helpers for common function in PHP",
+    "type": "library",
+    "license": "MIT",
+	"issues": "https://github.com/winponta/helpers/issues",
+	"keywords": ["php","helpers","string","library","common"],
+    "authors": [
+        {
+            "name": "Ademir Mazer Jr",
+            "email": "ademir.mazer.jr@gmail.com",
+			"homepage": "http://ademir.winponta.com.br"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Winponta\\Helpers\\": "src/"
+        }
+    },
+}
