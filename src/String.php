@@ -12,11 +12,11 @@ class String {
 		$this->string = $string;
 	}
 	
-	public function toSearch($string = '') {
-		$string = $this->string <> $string ? $string : $this->string;	
+	public function transliterate($string = '') {
+		$string = $string <> '' ? $string : $this->string;	
 
 		//$string = mb_convert_case($string, MB_CASE_UPPER, "UTF-8");		
-		$string = transliterator_transliterate('Any-Latin; Latin-ASCII; Upper()', $string);
+		$string = transliterator_transliterate('Any-Latin; Latin-ASCII; [\u0100-\u7fff] remove', $string);
 
 		$string = trim($string);
 
@@ -33,7 +33,7 @@ class String {
 			$delimiters = array(" ", "-", ".", "'", "O'", "Mc"), 
 			$exceptions = array("de", "da", "dos", "das", "do", "I", "II", "III", "IV", "V", "VI")
 	) {
-		$string = $this->string <> $string ? $string : $this->string;
+		$string = $string <> '' ? $string : $this->string;
 
         /*
          * Exceptions in lower case are words you don't want converted
