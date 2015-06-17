@@ -12,6 +12,11 @@ Function that mimics original php ucwords, but works with exceptions and delimit
 
 de, da, do, o, a, os .. etc.
 
+    $s = new String('JOÃO DA SILVA');
+    echo $s->ucwords();
+    // output
+    // João da Silva
+
 #### transliterate
 
 Function that simplify the String transliterating accents.
