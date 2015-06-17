@@ -12,6 +12,8 @@ Function that mimics original php ucwords, but works with exceptions and delimit
 
 de, da, do, o, a, os .. etc.
 
-#### toSearch
+#### transliterate
 
-Function that simplify the String transliterating accents and removing extra spaces
+Function that simplify the String transliterating accents.
+
+Depends on 'php-intl' extension
