@@ -12,11 +12,19 @@ class String {
 		$this->string = $string;
 	}
 	
-	public function transliterate($string = '') {
+	public function transliterate($string = '', $options = ['UPPER']) {
 		$string = $string <> '' ? $string : $this->string;	
-
+        
+        $op = '';
+        if (array_key_exists('UPPER', $options) || in_array('UPPER', $options)) {
+            $op = '; Upper()';
+        }
+        if (array_key_exists('LOWER', $options) || in_array('LOWER', $options)) {
+            $op = '; Lower()';
+        }
+        
 		//$string = mb_convert_case($string, MB_CASE_UPPER, "UTF-8");		
-		$string = transliterator_transliterate('Any-Latin; Latin-ASCII; [\u0100-\u7fff] remove', $string);
+		$string = transliterator_transliterate('Any-Latin; Latin-ASCII; [\u0100-\u7fff] remove' . $op, $string);
 
 		$string = trim($string);
 
