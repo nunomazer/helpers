@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * StringHelper class
+ * 
+ * @author Ademir Mazer Jr (Nuno Mazer) <ademir@winponta.com.br>
+ */
+
 namespace Winponta\Helpers;
 
 class StringHelper {
