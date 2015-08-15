@@ -34,7 +34,7 @@ class ArrayHelper {
                 if (is_array($value)) {
                     $array[$key] = self::charsetConvert($value, $from, $to);
                 } else {
-                    $array[$key] = String::charsetConvert($value, $from, $to);
+                    $array[$key] = StringHelper::charsetConvert($value, $from, $to);
                 }
             }
         }
