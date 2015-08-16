@@ -63,8 +63,13 @@ class StringHelper {
     }
 
     public static function charsetConvert($string, $from, $to) {
-        if (mb_detect_encoding($string, $from, true) != $from) {
-            $string = mb_convert_encoding($value, $to, $from);
+        $fromDetected = strtoupper(mb_detect_encoding($string, $from, true));
+        if ($fromDetected != strtoupper($to)) {
+            //die(mb_detect_encoding($string, $from, true));
+            if ($fromDetected != strtoupper($from )) {
+                $from = $fromDetected;
+            }
+            $string = mb_convert_encoding($string, strtoupper($to), $from);
         }
         
         return $string;
@@ -72,6 +77,17 @@ class StringHelper {
     
     public static function charsetConvertToUTF8($string, $from) {
         return String::charsetConvert($string, $from, 'UTF-8');
+    }
+    
+    /**
+     * Force UTF8 using toUTF8 function from neitanod/forceutf8. This function
+     * expects that original charset is ISO-8859-1, LATIN-1 ou WIN-1252.
+     * 
+     * @param mixed | array | string $string
+     * @return mixed
+     */
+    public static function forceUTF8 ($string) {
+        return \ForceUTF8\Encoding::toUTF8($string);
     }
 
 }

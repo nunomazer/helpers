@@ -114,5 +114,14 @@ class ArrayHelper {
 
         return false;
     }
+    
+    /**
+     * @see StringHelper::forceUTF8
+     * @param type $array
+     * @return array
+     */
+    public static function forceUTF8 ($array) {
+        return StringHelper::forceUTF8($array);
+    }
 
 }
